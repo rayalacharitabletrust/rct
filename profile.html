@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation - Ahobilam</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ROYAL IVORY THEME --- */
+        :root {
+            --bg-ivory: #FFFAF0; 
+            --text-maroon: #5a0e0e; 
+            --royal-gold: #c5911e; 
+            --gold-hover: #d4a02e;
+        }
+
+        body {
+            background-color: #fdfbf7;
+            font-family: 'Montserrat', sans-serif;
+            padding-top: 80px; /* Prevent content from hiding behind fixed header */
+        }
+
+        /* --- HEADER STYLES --- */
+        .navbar {
+            background-color: var(--bg-ivory);
+            padding: 10px 20px;
+            box-shadow: 0 4px 20px rgba(90, 14, 14, 0.08); 
+            border-top: 4px solid var(--royal-gold);
+            border-bottom: 1px solid rgba(197, 145, 30, 0.2);
+        }
+
+        /* Brand Styling */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        /* Logo Circle Styling - Updated for Image */
+.logo-circle {
+    width: 55px;  /* సైజు కొంచెం పెంచాను */
+    height: 55px; 
+    background: #fff; /* ఇమేజ్ క్లియర్‌గా కనిపించడానికి వైట్ బ్యాక్‌గ్రౌండ్ */
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-right: 12px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 2px solid #5a0e0e;
+    overflow: hidden; /* సర్కిల్ బయట ఇమేజ్ రాకుండా కట్ చేస్తుంది */
+}
+
+/* ఇమేజ్ సర్కిల్‌లో ఫిట్ అయ్యేలా */
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ఫోటో సాగదీయకుండా కరెక్ట్‌గా వస్తుంది */
+}
+
+        /* Text Styling inside Brand */
+        .brand-text-group {
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-title {
+            font-family: 'Cinzel', serif; 
+            font-size: 1.4rem; 
+            color: #b8860b; 
+            font-weight: 700; 
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .brand-subtitle {
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 0.75rem; 
+            color: #5a0e0e; 
+            letter-spacing: 1.5px; 
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Menu Links */
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-maroon) !important;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--royal-gold) !important;
+            transform: translateY(-1px);
+        }
+
+        /* User Icon */
+        .user-icon {
+            font-size: 1.5rem;
+            color: var(--text-maroon);
+            margin-right: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .user-icon:hover {
+            color: var(--royal-gold);
+        }
+
+        /* Premium Button */
+        .btn-premium {
+            background: var(--royal-gold);
+            color: #fff !important;
+            font-weight: 700;
+            border-radius: 30px;
+            padding: 8px 25px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(197, 145, 30, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-premium:hover {
+            background: var(--text-maroon);
+            color: var(--royal-gold) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger Toggler */
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(90, 14, 14, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--bg-ivory);
+                padding: 15px;
+                border-top: 1px solid rgba(0,0,0,0.05);
+                margin-top: 10px;
+            }
+            .user-icon {
+                margin-right: 15px; /* Adjust spacing on mobile */
+            }
+            .btn-premium {
+                width: 100%; /* Full width button on mobile */
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <li class="nav-item">
+    <a class="nav-link" href="index.html">Home</a>
+</li>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.html">
+    
+                  <div class="logo-circle">
+                  <img src="logo.png" alt="Rayala Logo" class="img-fluid">
+                  </div>
+    
+                    <div class="brand-text-group">
+                     <span class="brand-title">RAYALA</span>
+                     <span class="brand-subtitle">Charitable Trust</span>
+                    </div>
+                </a>
+            </a>
+
+            <div class="d-flex align-items-center order-lg-2 ms-auto">
+                <a href="profile.html" class="user-icon" title="My Account">
+                    <i class="far fa-circle-user"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Accommodation.html">Accommodation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Seva-&-Gallery.html">Seva & Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Contact-Us.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 d-none d-lg-block">
+                        <a class="btn btn-premium" href="#">Book Room</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="btn btn-premium" href="#">Book Room</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="container py-5">
+    
+    <div class="login-card mx-auto">
+        <h3 class="text-center mb-2 section-title">Check Booking Status</h3>
+        <p class="text-muted small text-center mb-4">Enter your registered mobile number to view details.</p>
+        
+        <div class="form-floating mb-3">
+            <input type="tel" id="uniqueSearchMobile" class="form-control" placeholder="Mobile Number" maxlength="10">
+            <label for="uniqueSearchMobile">Mobile Number</label>
+        </div>
+        
+        <button onclick="checkBooking()" class="btn btn-maroon w-100" id="searchBtn">
+            <i class="fas fa-search me-2"></i> Find Booking
+        </button>
+        
+        <div id="bookingResults" class="mt-4"></div>
+        
+        <div class="text-center mt-3" id="printSection" style="display:none;">
+             <button class="btn btn-outline-dark btn-sm rounded-pill px-4" onclick="window.print()">
+                <i class="fas fa-print me-2"></i> Print Ticket
+             </button>
+        </div>
+    </div>
+    </div>
+
+<style>
+    /* COLORS */
+    :root { 
+        --text-maroon: #5a0e0e; 
+        --royal-gold: #c5911e; 
+    }
+
+    /* CARD STYLING */
+    .login-card {
+        max-width: 500px; 
+        background: white; 
+        padding: 40px; 
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(90, 14, 14, 0.15);
+        border-top: 6px solid var(--text-maroon);
+    }
+
+    .section-title {
+        font-family: 'Cinzel', serif; 
+        color: var(--text-maroon); 
+        font-weight: 700; 
+        letter-spacing: 1px;
+    }
+
+    .btn-maroon {
+        background: linear-gradient(135deg, #5a0e0e, #800000); 
+        color: white; 
+        padding: 12px; 
+        font-weight: bold; 
+        border: none; 
+        border-radius: 8px; 
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        transition: 0.3s;
+    }
+    .btn-maroon:hover { 
+        background: var(--royal-gold); 
+        transform: translateY(-2px); 
+        box-shadow: 0 5px 15px rgba(197, 145, 30, 0.4); 
+    }
+
+    /* TICKET STYLE CARD (PREMIUM LOOK) */
+    .ticket-card {
+        border: 1px solid #e0e0e0; 
+        border-radius: 12px; 
+        overflow: hidden; 
+        margin-bottom: 20px;
+        background: #fff; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+        transition: 0.3s;
+    }
+    .ticket-card:hover { 
+        transform: translateY(-3px); 
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+    }
+    
+    .ticket-header {
+        background: #f8f9fa; 
+        padding: 15px; 
+        border-bottom: 1px dashed #ccc;
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+    
+    .ticket-body { padding: 20px; }
+    
+    .info-row { 
+        display: flex; 
+        justify-content: space-between; 
+        margin-bottom: 10px; 
+        font-size: 0.95rem; 
+    }
+    .info-label { color: #666; font-size: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase; }
+    .info-value { font-weight: 600; color: #333; }
+    
+    .status-badge { 
+        padding: 5px 12px; 
+        border-radius: 20px; 
+        font-size: 0.75rem; 
+        font-weight: bold; 
+        text-transform: uppercase; 
+    }
+    .bg-success-subtle { background-color: #d1e7dd; color: #0f5132; }
+    .bg-warning-subtle { background-color: #fff3cd; color: #664d03; }
+    .bg-danger-subtle { background-color: #f8d7da; color: #842029; }
+</style>
+
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title"><i class="fas fa-wallet me-2"></i>Complete Payment</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            
+            <div class="modal-body text-center p-4">
+                <h2 class="text-maroon fw-bold mb-1" id="payAmount">₹0</h2>
+                <p class="text-muted small mb-3">Total Payable Amount</p>
+                
+                <div class="d-grid mb-3">
+                    <a id="upiDeepLink" href="#" class="btn btn-primary fw-bold py-2 shadow-sm" style="background: #5f259f; border:none;">
+                        <i class="fas fa-mobile-alt me-2"></i> Click to Pay via PhonePe / GPay
+                    </a>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center mb-3">
+                    <hr class="flex-grow-1"> <span class="mx-2 text-muted small">OR SCAN</span> <hr class="flex-grow-1">
+                </div>
+
+                <div class="bg-light p-3 rounded border mb-3">
+                    <img id="dynamicQrImage" src="" alt="Generating QR..." class="img-fluid border p-1 bg-white mb-2" style="width:180px; height:180px; object-fit:contain;">
+                    <p class="mb-0 small fw-bold text-dark">Pay to: <span id="displayUpiId"></span></p>
+                </div>
+
+                <form id="paymentForm" class="text-start">
+                    <input type="hidden" name="action" value="pay">
+                    <input type="hidden" id="payMobile">
+                    
+                    <div class="mb-2">
+                        <label class="small fw-bold text-muted">Your Phone Number</label>
+                        <input type="tel" id="senderPhone" class="form-control" placeholder="Ex: 9988776655" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="small fw-bold text-muted">Transaction ID / UTR</label>
+                        <input type="text" id="transactionId" class="form-control border-success" placeholder="Ex: T1234567890" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 fw-bold py-2">
+                        Verify & Confirm Booking
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ⚠️ మీ Google Apps Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxyeq4gjjYxUQfofQt9YZrYhY217Of1PrNZzGaS66A6WpBp-6E3qX1xoKfdiDvg9QXMOw/exec'; 
+
+    // 🔥 UPI Details
+    const myUpiId = "8464919219@ybl";  
+    const myName = "Rayala Charitable Trust"; 
+
+    // --- A. OPEN PAYMENT MODAL ---
+    function openPaymentModal(amount, mobile) {
+        document.getElementById('payAmount').innerText = "₹" + amount;
+        document.getElementById('payMobile').value = mobile;
+        document.getElementById('displayUpiId').innerText = myUpiId;
+
+        // UPI Link Generation
+        let upiLink = `upi://pay?pa=${myUpiId}&pn=${encodeURIComponent(myName)}&am=${amount}&cu=INR`;
+        document.getElementById('upiDeepLink').href = upiLink;
+
+        // QR Code Generation
+        let qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiLink)}`;
+        document.getElementById('dynamicQrImage').src = qrApiUrl;
+
+        new bootstrap.Modal(document.getElementById('paymentModal')).show();
+    }
+
+    // --- B. SUBMIT PAYMENT FORM ---
+    document.getElementById('paymentForm').addEventListener('submit', e => {
+        e.preventDefault();
+        var btn = e.target.querySelector('button');
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...'; 
+        btn.disabled = true;
+
+        var txnID = document.getElementById('transactionId').value;
+        var senderPh = document.getElementById('senderPhone').value;
+        var finalTxnData = txnID + " (Ph: " + senderPh + ")";
+
+        var formData = new FormData();
+        formData.append("action", "pay");
+        formData.append("Mobile", document.getElementById('payMobile').value);
+        formData.append("TransactionID", finalTxnData);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+            if(data.result === 'success') {
+                alert("✅ Payment Successful! Booking CONFIRMED.");
+                location.reload();
+            } else {
+                alert("❌ Error: " + data.message);
+                btn.innerHTML = "Verify & Confirm Booking"; btn.disabled = false;
+            }
+        })
+        .catch(error => {
+            alert("Network Error");
+            btn.innerHTML = "Verify & Confirm Booking"; btn.disabled = false;
+        });
+    });
+
+    // --- C. CHECK BOOKING FUNCTION (ఇంతకు ముందు ఇచ్చినదే) ---
+    function formatDate(dateString) {
+        if (!dateString || dateString.length < 10) return dateString;
+        var parts = dateString.split('T')[0].split('-');
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return parts[2] + " " + months[parseInt(parts[1]) - 1] + " " + parts[0];
+    }
+
+    function checkBooking() {
+        var mobileInput = document.getElementById('uniqueSearchMobile').value;
+        var btn = document.getElementById('searchBtn');
+        var resultDiv = document.getElementById('bookingResults');
+        var printSec = document.getElementById('printSection');
+
+        var mobile = mobileInput.replace(/\D/g, ''); 
+
+        if (mobile.length !== 10) { alert("Please enter a valid 10-digit mobile number."); return; }
+
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Searching...';
+        btn.disabled = true;
+        resultDiv.innerHTML = "";
+        printSec.style.display = "none";
+
+        fetch(scriptURL + "?mobile=" + mobile)
+        .then(response => response.json())
+        .then(data => {
+            btn.innerHTML = '<i class="fas fa-search me-2"></i> Find Booking';
+            btn.disabled = false;
+
+            if (data.status === "found") {
+                let htmlContent = "";
+                printSec.style.display = "block";
+                
+                data.data.forEach((booking, index) => {
+                    let badgeClass = "bg-warning-subtle text-dark"; 
+                    let btnHTML = "";
+                    let statusLower = booking.bookingStatus.toLowerCase().trim();
+
+                    if (statusLower === 'confirmed') {
+                        badgeClass = 'bg-success-subtle text-success';
+                        if (!booking.txnId || booking.txnId === "Not Paid" || booking.txnId === "") {
+                             btnHTML = `
+                                <div class="mt-3 border-top pt-3">
+                                    <button class="btn btn-success w-100 fw-bold shadow-sm" onclick="openPaymentModal('${booking.amount}', '${mobile}')">
+                                        <i class="fas fa-qrcode me-2"></i> PAY NOW ₹${booking.amount}
+                                    </button>
+                                </div>`;
+                        } else {
+                             btnHTML = `<div class="mt-3 border-top pt-2 text-center text-success fw-bold"><i class="fas fa-check-circle"></i> PAID (${booking.txnId})</div>`;
+                        }
+                    } else if (statusLower === 'cancelled') {
+                        badgeClass = 'bg-danger-subtle text-danger';
+                    }
+
+                    htmlContent += `
+                        <div class="ticket-card">
+                            <div class="ticket-header">
+                                <div><small class="text-muted d-block" style="font-size:0.7rem;">BOOKING ID</small><span class="fw-bold text-maroon">#RCT-${1000 + index + 1}</span></div>
+                                <span class="status-badge ${badgeClass}">${booking.bookingStatus}</span>
+                            </div>
+                            <div class="ticket-body">
+                                <div class="info-row">
+                                    <div><div class="info-label">GUEST NAME</div><div class="info-value text-capitalize">${booking.name}</div></div>
+                                    <div class="text-end"><div class="info-label">TOTAL AMOUNT</div><div class="info-value text-maroon" style="font-size:1.1rem;">₹${booking.amount}</div></div>
+                                </div>
+                                <div class="info-row mt-3">
+                                    <div><div class="info-label">CHECK-IN</div><div class="info-value text-success">${formatDate(booking.checkin)}</div></div>
+                                    <div class="text-end"><div class="info-label">CHECK-OUT</div><div class="info-value text-danger">${formatDate(booking.checkout)}</div></div>
+                                </div>
+                                <div class="mt-3 p-2 bg-light rounded">
+                                    <div class="info-label" style="font-size:0.7rem;">ROOM TYPE</div>
+                                    <div class="fw-bold small">${booking.room} (${booking.roomsCount} Rooms)</div>
+                                </div>
+                                ${btnHTML}
+                            </div>
+                        </div>
+                    `;
+                });
+                resultDiv.innerHTML = htmlContent;
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-danger text-center">No booking found for ${mobile}</div>`;
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            btn.innerHTML = '<i class="fas fa-search me-2"></i> Find Booking';
+            btn.disabled = false;
+            alert("Network Error.");
+        });
+    }
+</script>

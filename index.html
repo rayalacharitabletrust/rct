@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta name="google-site-verification" content="7qByyspIYwMlVguG09WKSi41LHiEQqFAdR-tJGGwVO4" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayala Charitable Trust - Ahobilam</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- GLOBAL VARIABLES --- */
+        :root {
+            --bg-ivory: #FFFAF0; 
+            --text-maroon: #5a0e0e; 
+            --royal-gold: #c5911e; 
+            --gold-hover: #d4a02e;
+        }
+
+        body {
+            background-color: #fdfbf7;
+            font-family: 'Montserrat', sans-serif;
+            padding-top: 80px; /* Header Fixed Space */
+        }
+
+        /* --- HEADER STYLES --- */
+        .navbar {
+            background-color: var(--bg-ivory);
+            padding: 10px 20px;
+            box-shadow: 0 4px 20px rgba(90, 14, 14, 0.08); 
+            border-top: 4px solid var(--royal-gold);
+            border-bottom: 1px solid rgba(197, 145, 30, 0.2);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        /* Logo Circle */
+        .logo-circle {
+            width: 55px; 
+            height: 55px; 
+            background: #fff;
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-right: 12px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 2px solid #5a0e0e;
+            overflow: hidden;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Brand Text */
+        .brand-text-group {
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-title {
+            font-family: 'Cinzel', serif; 
+            font-size: 1.4rem; 
+            color: #b8860b; 
+            font-weight: 700; 
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .brand-subtitle {
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 0.75rem; 
+            color: #5a0e0e; 
+            letter-spacing: 1.5px; 
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Navigation Links */
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-maroon) !important;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--royal-gold) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Icons & Buttons */
+        .user-icon {
+            font-size: 1.5rem;
+            color: var(--text-maroon);
+            margin-right: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .user-icon:hover { color: var(--royal-gold); }
+
+        .btn-premium {
+            background: var(--royal-gold);
+            color: #fff !important;
+            font-weight: 700;
+            border-radius: 30px;
+            padding: 8px 25px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(197, 145, 30, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-premium:hover {
+            background: var(--text-maroon);
+            color: var(--royal-gold) !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-toggler { border: none; padding: 0; }
+        .navbar-toggler:focus { box-shadow: none; }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(90, 14, 14, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* --- HERO SECTION STYLES (UPDATED) --- */
+        .hero-section {
+            position: relative;
+            /* YOUR UPLOADED IMAGE HERE */
+            background-image: url('nature.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax Effect */
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            margin-top: -1px;
+        }
+
+        /* BLACK OVERLAY FIX (No more Red) */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* 60% Black Overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .highlight-gold {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn-hero {
+            background: linear-gradient(45deg, #c5911e, #e6b800);
+            color: #000;
+            font-weight: 800;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            background: #fff;
+            color: #5a0e0e;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--bg-ivory);
+                padding: 15px;
+                border-top: 1px solid rgba(0,0,0,0.05);
+                margin-top: 10px;
+            }
+            .user-icon { margin-right: 15px; }
+            .btn-premium { width: 100%; margin-top: 10px; }
+            
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .hero-section { height: 70vh; }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-circle">
+                   <img src="logo.png" alt="Rayala Logo">
+                </div>
+                <div class="brand-text-group">
+                    <span class="brand-title">RAYALA</span>
+                    <span class="brand-subtitle">Charitable Trust</span>
+                </div>
+            </a>
+
+            <div class="d-flex align-items-center order-lg-2 ms-auto">
+                <a href="profile.html" class="user-icon" title="My Account">
+                    <i class="far fa-circle-user"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Accommodation.html">Accommodation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Seva-&-Gallery.html">Seva & Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item ms-lg-3 d-none d-lg-block">
+                        <a class="btn btn-premium" href="#">Book Room</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="btn btn-premium" href="#">Book Room</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section">
+        <div class="container hero-content text-center">
+            <h1 class="hero-title">Welcome to Ahobilam</h1>
+            
+            <h2 class="hero-subtitle">
+                Safe & Comfortable Stay at <span class="highlight-gold">Nominal Charges</span>
+            </h2>
+            
+            <p class="hero-description">
+                Dedicated to serving the devotees of Lord Narasimha Swamy with 
+                clean, hygienic, and affordable accommodation.
+                <br>
+                (శుభ్రమైన గదులు అతి తక్కువ ధరలో లభించును)
+            </p>
+    
+            <a href="#" class="btn btn-hero">Book Your Stay</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <section class="py-5" style="background-color: #fff;">
+    <div class="container">
+        
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">Our Accommodation</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Experience a peaceful stay with modern amenities at Rayala Charitable Trust.
+                    <br>(భక్తులకు కావలసిన అన్ని సౌకర్యాలతో కూడిన గదులు)
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h4>30 Hygienic Rooms</h4>
+                    <p>Spacious and well-maintained rooms designed for a comfortable stay for families and groups.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-hot-tub"></i>
+                    </div>
+                    <h4>24/7 Hot & Cold Water</h4>
+                    <p>Continuous water supply with heating facilities for a refreshing bath before Darshan.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h4>Nominal Charges</h4>
+                    <p>Accommodation is provided at very affordable rates to support every devotee's pilgrimage.</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="booking-strip d-flex justify-content-between align-items-center flex-wrap">
+                    <div>
+                        <h4 class="mb-1 text-white">Book Your Room Today</h4>
+                        <p class="mb-0 text-white-50">Don't wait! Secure your stay for the upcoming festival.</p>
+                    </div>
+                    <a href="#" class="btn btn-light btn-lg mt-3 mt-md-0">Check Availability</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* SECTION STYLES */
+    .section-title {
+        font-family: 'Cinzel', serif;
+        color: var(--text-maroon); /* Uses the Maroon variable */
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+
+    .title-underline {
+        width: 80px;
+        height: 3px;
+        background-color: var(--royal-gold); /* Uses Gold variable */
+        margin: 10px auto 20px;
+    }
+
+    .section-subtitle {
+        color: #666;
+        font-size: 1.1rem;
+    }
+
+    /* FEATURE CARD DESIGN */
+    .feature-card {
+        background: #fdfbf7; /* Light Ivory */
+        padding: 40px 20px;
+        border: 1px solid rgba(197, 145, 30, 0.2);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-color: var(--royal-gold);
+    }
+
+    .icon-box {
+        width: 70px;
+        height: 70px;
+        background: var(--royal-gold);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin: 0 auto 20px;
+        box-shadow: 0 4px 10px rgba(197, 145, 30, 0.4);
+    }
+
+    .feature-card h4 {
+        font-family: 'Playfair Display', serif;
+        color: var(--text-maroon);
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    /* BOOKING STRIP */
+    .booking-strip {
+        background: linear-gradient(135deg, #5a0e0e, #800000); /* Royal Maroon Gradient */
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(90, 14, 14, 0.3);
+    }
+    
+    .booking-strip .btn-light {
+        color: #5a0e0e;
+        font-weight: 700;
+        border-radius: 30px;
+        padding: 10px 30px;
+    }
+</style>
+
+<section class="temple-info-section py-5">
+    <div class="container">
+        
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">The 9 Holy Abodes</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Ahobilam is the only place where all nine forms of Lord Narasimha are worshipped.
+                    <br>(అహోబిలంలోని నవ నారసింహ క్షేత్రాలు మరియు దర్శన వేళలు)
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-lg-8">
+                <div class="nava-narasimha-box">
+                    <h4 class="box-title"><i class="fas fa-gopuram me-2"></i> Nava Narasimhas</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="temple-list">
+                                <li><strong>1. Jwala Narasimha:</strong> The anger form (Upper Ahobilam)</li>
+                                <li><strong>2. Ahobila Narasimha:</strong> The main deity (Upper Ahobilam)</li>
+                                <li><strong>3. Malola Narasimha:</strong> With Goddess Lakshmi (Peaceful)</li>
+                                <li><strong>4. Kroda Narasimha:</strong> Varaha Form</li>
+                                <li><strong>5. Karanja Narasimha:</strong> Under Karanja Tree</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="temple-list">
+                                <li><strong>6. Bhargava Narasimha:</strong> Worshipped by Parashurama</li>
+                                <li><strong>7. Yogananda Narasimha:</strong> In Yoga posture</li>
+                                <li><strong>8. Chatravata Narasimha:</strong> Under Peepal tree</li>
+                                <li><strong>9. Pavana Narasimha:</strong> The most powerful form</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="timings-box text-center">
+                    <div class="clock-icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h4 class="box-title">Darshan Timings</h4>
+                    <p class="mb-2 text-muted">Lower Ahobilam</p>
+                    <h5 class="time-text">6:30 AM - 1:00 PM</h5>
+                    <h5 class="time-text">3:00 PM - 8:00 PM</h5>
+                    
+                    <hr style="border-color: #c5911e;">
+                    
+                    <p class="mb-2 text-muted">Upper Ahobilam</p>
+                    <h5 class="time-text">7:00 AM - 1:00 PM</h5>
+                    <h5 class="time-text">2:00 PM - 7:00 PM</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* TEMPLE INFO STYLES */
+    .temple-info-section {
+        background-color: #fcf8f2; /* Very Light Orange/Cream */
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* Nava Narasimha Box */
+    .nava-narasimha-box {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-left: 5px solid #5a0e0e; /* Maroon Border */
+        height: 100%;
+    }
+
+    .box-title {
+        font-family: 'Cinzel', serif;
+        color: #5a0e0e;
+        font-weight: 700;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+    }
+
+    .temple-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .temple-list li {
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+        color: #444;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Small bullet point */
+    .temple-list li::before {
+        content: '🕉';
+        color: #c5911e;
+        margin-right: 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Timings Box */
+    .timings-box {
+        background: linear-gradient(135deg, #5a0e0e, #800000); /* Maroon Gradient */
+        color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(90, 14, 14, 0.3);
+        height: 100%;
+        border: 2px solid #c5911e; /* Gold Border */
+    }
+
+    .timings-box .box-title {
+        color: #fff;
+        border-bottom-color: rgba(255,255,255,0.2);
+    }
+
+    .clock-icon {
+        font-size: 3rem;
+        color: #c5911e; /* Gold Icon */
+        margin-bottom: 15px;
+    }
+
+    .time-text {
+        color: #c5911e; /* Gold Time */
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1px;
+    }
+    
+    .text-muted {
+        color: #e0e0e0 !important; /* Light Grey for labels */
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+</style>
+
+<section class="transport-section py-5">
+    <div class="container">
+        
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">How to Reach Ahobilam</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Ahobilam is well connected by Road and Rail networks.
+                    <br>(అహోబిలం చేరుకొను మార్గాలు)
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <div class="transport-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-bus-alt"></i>
+                    </div>
+                    <h4>By Road (బస్సు ద్వారా)</h4>
+                    <p>
+                        Ahobilam is 25 KM from <strong>Allagadda</strong> and 65 KM from <strong>Nandyal</strong>. 
+                        Direct APSRTC buses are available from Allagadda Bus Stand every 30 minutes. 
+                        Pilgrims coming from Hyderabad/Bangalore can get down at Allagadda.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="transport-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-train"></i>
+                    </div>
+                    <h4>By Train (రైలు ద్వారా)</h4>
+                    <p>
+                        The nearest Railway Stations are:
+                        <ul class="transport-list">
+                            <li><strong>Nandyal (NDL):</strong> 65 KM away.</li>
+                            <li><strong>Cuddapah (HX):</strong> 85 KM away.</li>
+                            <li><strong>Tadipatri (TU):</strong> 100 KM away.</li>
+                        </ul>
+                        From there, you can take a bus or taxi to Allagadda/Ahobilam.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="transport-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h4>By Air (విమానం ద్వారా)</h4>
+                    <p>
+                        The nearest airports are:
+                        <ul class="transport-list">
+                            <li><strong>Kurnool (Orvakal):</strong> 110 KM.</li>
+                            <li><strong>Tirupati (TIR):</strong> 230 KM.</li>
+                            <li><strong>Bengaluru (BLR):</strong> 350 KM.</li>
+                            <li><strong>Hyderabad (RGIA):</strong> 330 KM.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* TRANSPORT SECTION STYLES */
+    .transport-section {
+        background-color: #fff;
+    }
+
+    .transport-card {
+        background: #fdfbf7; /* Ivory */
+        padding: 40px 25px;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px solid #eee;
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Hover Effect */
+    .transport-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(90, 14, 14, 0.1);
+        border-color: var(--royal-gold);
+    }
+
+    /* Top Color Bar on Card */
+    .transport-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 5px;
+        background: linear-gradient(to right, #5a0e0e, #c5911e);
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        background: #fff;
+        border: 2px solid var(--royal-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #5a0e0e; /* Maroon Icon */
+        margin: 0 auto 20px auto;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .transport-card h4 {
+        font-family: 'Cinzel', serif;
+        color: #5a0e0e;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .transport-card p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .transport-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .transport-list li {
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+        color: #444;
+    }
+    
+    .transport-list li strong {
+        color: #c5911e;
+    }
+</style>
+
+<section class="committee-section py-5">
+    <div class="container">
+        
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">Trust Committee</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Dedicated members serving the trust since 2013.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-4 col-lg-3">
+                <div class="member-card chairman-card">
+                    <div class="img-box">
+                        <img src="chairman.jpg" alt="Chairman">
+                    </div>
+                    <div class="info-box">
+                        <h4 class="name">Sri.Vedurla Ramachandra Rao</h4>
+                        <p class="designation">Chairman</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-5 g-4">
+            
+            <div class="col-md-4 col-lg-3">
+                <div class="member-card">
+                    <div class="img-box">
+                        <img src="vice-chairman.jpg" alt="Vice Chairman">
+                    </div>
+                    <div class="info-box">
+                        <h4 class="name">Sri.Dr.Muthyala Venkata Prasad</h4>
+                        <p class="designation">Vice Chairman</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="member-card">
+                    <div class="img-box">
+                        <img src="secretary.jpg" alt="Secretary">
+                    </div>
+                    <div class="info-box">
+                        <h4 class="name">Sri.Yerramsetty Narayana Reddy</h4>
+                        <p class="designation">Secretary</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div class="member-card">
+                    <div class="img-box">
+                        <img src="treasurer.jpg" alt="Treasurer">
+                    </div>
+                    <div class="info-box">
+                        <h4 class="name">Sri.A.C.Balathimmaiah (Nallagatla Baludu)</h4>
+                        <p class="designation">Treasurer</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>
+
+<style>
+    /* COMMITTEE STYLES */
+    .committee-section {
+        background-color: #fdfbf7; /* Light Ivory Background */
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* Card Design */
+    .member-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-bottom: 3px solid var(--royal-gold);
+        transition: transform 0.3s;
+    }
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(90, 14, 14, 0.15);
+    }
+
+    /* Chairman Card Special Style */
+    .chairman-card {
+        border-bottom: 3px solid #5a0e0e; /* Maroon Border */
+        background: linear-gradient(to bottom, #fff, #fff0f0);
+        transform: scale(1.05);
+    }
+
+    /* Photo Box */
+    .img-box img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid var(--royal-gold);
+        padding: 3px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    /* Text */
+    .info-box .name {
+        font-family: 'Playfair Display', serif;
+        color: #5a0e0e;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .info-box .designation {
+        color: #c5911e; /* Gold */
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* Small Member Style */
+    .member-small {
+        text-align: center;
+        padding: 15px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .member-small img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        border: 2px solid #ddd;
+    }
+    .member-small h5 {
+        font-size: 0.9rem;
+        color: #333;
+        margin: 0;
+    }
+</style>
+
+<div class="row justify-content-center mt-5">
+            <h4 class="text-center mb-4" style="color:#5a0e0e; font-family:'Cinzel', serif; font-weight:700;">Executive Members</h4>
+            
+            <div class="col-6 col-md-3 mb-4">
+                <div class="exec-card">
+                    <div class="exec-img-box">
+                        <img src="committee-1.jpg" alt="Member">
+                    </div>
+                    <h5 class="exec-name">Sri. Patti Bachepalli Venkata Narayana</h5>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4">
+                <div class="exec-card">
+                    <div class="exec-img-box">
+                        <img src="committee-2.jpg" alt="Member">
+                    </div>
+                    <h5 class="exec-name">Sri. Siddi Narayana</h5>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4">
+                <div class="exec-card">
+                    <div class="exec-img-box">
+                        <img src="committee-3.jpg" alt="Member">
+                    </div>
+                    <h5 class="exec-name">Sri. Yama Gurrappa</h5>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4">
+                <div class="exec-card">
+                    <div class="exec-img-box">
+                        <img src="committee-4.jpg" alt="Member">
+                    </div>
+                    <h5 class="exec-name">Sri. Chaluvadi Srinivas</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* COMMITTEE STYLES (Existing) */
+    .committee-section {
+        background-color: #fdfbf7;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .member-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-bottom: 3px solid var(--royal-gold);
+        transition: transform 0.3s;
+        height: 100%; /* Ensures all cards are same height */
+    }
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(90, 14, 14, 0.15);
+    }
+
+    .chairman-card {
+        border-bottom: 3px solid #5a0e0e;
+        background: linear-gradient(to bottom, #fff, #fff0f0);
+    }
+
+    .img-box img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid var(--royal-gold);
+        padding: 3px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .info-box .name {
+        font-family: 'Playfair Display', serif;
+        color: #5a0e0e;
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+
+    .info-box .designation {
+        color: #c5911e;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* --- NEW EXECUTIVE MEMBERS STYLE --- */
+    .exec-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px 10px; /* Padding for spacing */
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        border: 1px solid rgba(197, 145, 30, 0.2);
+        height: 100%;
+        transition: all 0.3s ease;
+    }
+
+    .exec-card:hover {
+        border-color: var(--royal-gold);
+        transform: translateY(-3px);
+    }
+
+    /* Center Image Properly */
+    .exec-img-box {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px auto; /* Centers the image */
+        position: relative;
+    }
+
+    .exec-img-box img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--royal-gold);
+        padding: 2px;
+    }
+
+    .exec-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: #333;
+        font-weight: 600;
+        line-height: 1.4;
+        margin: 0;
+    }
+</style>
+
+<section class="gallery-section py-5">
+    <div class="container">
+        
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">Seva & Gallery</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Glimpses of our service to devotees and the divine beauty of Ahobilam.
+                    <br>(మా సేవా కార్యక్రమాలు మరియు అహోబిలం క్షేత్ర చిత్రాలు)
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-10">
+                <div class="annadanam-box d-flex align-items-center">
+                    <div class="icon-part">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="text-part ms-3">
+                        <h4>Nitya Annadanam (నిత్య అన్నదానం)</h4>
+                        <p class="mb-0">
+                            We provide free food (Annadanam) to all devotees staying in our trust. 
+                            Participating in Annadanam is considered the greatest service to the Lord.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="meeting.jpg" alt="Temple">
+                    <div class="overlay-text">Temple View</div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="annadhanam.jpg" alt="Annadanam">
+                    <div class="overlay-text">Annadanam Seva</div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="lower temple.png" alt="Rooms">
+                    <div class="overlay-text">Clean Rooms</div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="jwala.png" alt="Puja">
+                    <div class="overlay-text">Special Pujas</div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="bhargava2.png" alt="Nature">
+                    <div class="overlay-text">Ahobilam Forest</div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="Ahobilam-Narasimhaswamy-Temple1.jpg" alt="Events">
+                    <div class="overlay-text">Trust Events</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* GALLERY STYLES */
+    .gallery-section {
+        background-color: #ffffff; /* White background for contrast */
+    }
+
+    /* Annadanam Box Style */
+    .annadanam-box {
+        background: linear-gradient(to right, #5a0e0e, #800000); /* Maroon Gradient */
+        color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(90, 14, 14, 0.2);
+        border-left: 5px solid var(--royal-gold);
+    }
+    
+    .annadanam-box .icon-part {
+        font-size: 3rem;
+        color: var(--royal-gold);
+    }
+    
+    .annadanam-box h4 {
+        font-family: 'Cinzel', serif;
+        color: var(--royal-gold);
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    /* Gallery Grid Style */
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+        height: 250px; /* అన్ని ఫోటోలు ఒకే హైట్ లో ఉండేలా */
+        border: 2px solid #eee;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    /* Zoom Effect on Hover */
+    .gallery-item:hover img {
+        transform: scale(1.1); 
+    }
+
+    /* Overlay Text (Hidden by default, shows on hover) */
+    .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        transform: translateY(100%); /* Initially hidden down */
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .overlay-text {
+        transform: translateY(0); /* Slides up */
+    }
+</style>
+
+<section class="faq-section py-5">
+    <div class="container">
+        
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Common queries regarding accommodation, booking, and facilities.
+                    <br>(భక్తులకు సాధారణంగా వచ్చే సందేహాలు - సమాధానాలు)
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <div class="accordion" id="faqAccordion">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                1. How can I book a room at Rayala Charitable Trust?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You can book a room by clicking on the <strong>"Book Room"</strong> button on our website and filling out the enquiry form. Alternatively, you can directly call our office numbers provided in the contact section. We recommend booking at least <strong>1 week in advance</strong> during festival seasons and weekends to ensure availability. Please carry a valid <strong>Govt ID Proof (Aadhaar Card)</strong> during check-in.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                2. What are the room charges? Is it free of cost?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Rayala Charitable Trust is a non-profit organization. While the accommodation is provided as a service to devotees, we collect **Nominal Maintenance Charges** to cover electricity, cleaning, water, and staff salaries. These charges are very affordable compared to commercial hotels. 
+                                <br><br>
+                                <em>(మాది సేవా దృక్పథంతో నడిచే ట్రస్ట్. కరెంట్ మరియు నిర్వహణ ఖర్చుల కోసం కేవలం నామమాత్రపు రుసుము మాత్రమే తీసుకోబడుతుంది).</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                3. What are the rules and regulations for staying?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                As Ahobilam is a sacred pilgrimage site, we strictly follow spiritual discipline:
+                                <ul>
+                                    <li><strong>Prohibited:</strong> Consumption of Alcohol, Smoking, and Non-Vegetarian food is <span class="text-danger">STRICTLY PROHIBITED</span> inside the premises.</li>
+                                    <li><strong>Silence:</strong> Guests are requested to maintain silence and keep the premises clean.</li>
+                                    <li><strong>Unmarried Couples:</strong> Rooms will not be allotted to unmarried couples. Proper family ID proofs are mandatory.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                4. Do you provide Hot Water and Food facilities?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>Hot Water:</strong> Yes, we have solar heating systems and geysers ensuring 24/7 hot water supply, which is essential for devotees taking an early morning bath before Darshan.
+                                <br>
+                                <strong>Food:</strong> We provide <strong>Nitya Annadanam (Free Food)</strong> to all inmates staying in our rooms. There are also several canteens nearby for tiffin and snacks.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                5. What are the Check-in and Check-out timings?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our standard check-in time is <strong>24 Hours</strong> from the time of arrival (subject to availability). However, during peak festival days, fixed timings might apply. We request you to confirm your arrival time over the phone so we can keep the room ready for you.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                6. Is Car Parking available? How far is the temple?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we have spacious <strong>Car Parking</strong> facility within the trust compound, which is safe and secure. The main Lower Ahobilam temple is at a walkable distance, and auto-rickshaws are readily available to travel to Upper Ahobilam.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* FAQ SECTION STYLES */
+    .faq-section {
+        background-color: #fff; /* Clean White Background */
+    }
+
+    .accordion-item {
+        border: none;
+        margin-bottom: 15px;
+        border-radius: 10px !important;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        border-left: 5px solid transparent; /* Hidden border initially */
+        transition: all 0.3s ease;
+    }
+
+    /* Active Item Styling */
+    .accordion-button:not(.collapsed) {
+        color: #5a0e0e; /* Maroon Text */
+        background-color: #FFFAF0; /* Ivory Background */
+        box-shadow: none;
+        font-weight: 700;
+        border-left: 5px solid var(--royal-gold); /* Gold line on active */
+    }
+    
+    /* When Item is active, show gold border on the item wrapper too */
+    .accordion-item:has(.accordion-button:not(.collapsed)) {
+        border-left: 5px solid var(--royal-gold);
+    }
+
+    /* Default Button Style */
+    .accordion-button {
+        color: #333;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.05rem;
+        padding: 20px;
+    }
+
+    .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(0,0,0,0.1);
+    }
+
+    /* Answer Text Body */
+    .accordion-body {
+        font-family: 'Montserrat', sans-serif;
+        color: #555;
+        line-height: 1.7;
+        padding: 20px 25px;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+    }
+
+    /* List inside answers */
+    .accordion-body ul {
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+    .accordion-body li {
+        margin-bottom: 8px;
+    }
+
+    /* Remove default focus outline */
+    .accordion-button:focus {
+        box-shadow: none; 
+    }
+</style>
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="row g-4">
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-brand">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                        <h3 class="footer-title mb-0">Rayala Charitable Trust</h3>
+                    </div>
+                    <p class="footer-desc">
+                        Dedicated to serving the devotees of Lord Narasimha Swamy in Ahobilam. 
+                        Providing safe, hygienic, and affordable accommodation since 2013.
+                    </p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Accommodation.html">Rooms</a></li>
+                    <li><a href="Seva-&-Gallery.html">Gallery</a></li>
+                    <li><a href="Contact-Us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="contact-info">
+                    <li>
+                        <div class="icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+                        <span>Ahobilam, Nandyal Dist,<br>Andhra Pradesh - 518543</span>
+                    </li>
+                    <li>
+                        <div class="icon-wrap"><i class="fas fa-phone-alt"></i></div>
+                        <span>+91 98662 18572</span>
+                    </li>
+                    <li>
+                        <div class="icon-wrap"><i class="fas fa-envelope"></i></div>
+                        <span>info@rayalatrust.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="footer-heading">Find Us</h4>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.586616460627!2d78.6756813148408!3d15.132663989467642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5c5c0c0c0c0c1%3A0x0!2sAhobilam!5e0!3m2!1sen!2sin!4v1612345678901" 
+                        width="100%" height="150" style="border:0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="copyright-area">
+        <div class="container text-center">
+            <p class="mb-0">
+                © 2026 <strong>Rayala Charitable Trust</strong>. All Rights Reserved. 
+            </p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* FOOTER STYLES (Light Theme) */
+    .footer-section {
+        background-color: #FFFAF0; /* Same Ivory color as Header */
+        color: #333; /* Dark text for readability */
+        padding-top: 60px;
+        margin-top: 50px;
+        border-top: 5px solid var(--royal-gold); /* Gold Border on top */
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.05); /* Slight shadow */
+    }
+
+    .footer-title {
+        font-family: 'Cinzel', serif;
+        color: #5a0e0e; /* Maroon Text */
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    
+    .footer-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .footer-heading {
+        font-family: 'Playfair Display', serif;
+        color: #5a0e0e; /* Maroon Heading */
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    /* Gold line under headings */
+    .footer-heading::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background-color: var(--royal-gold);
+    }
+
+    /* Links Styling */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #444;
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+
+    .footer-links a:hover {
+        color: #c5911e; /* Gold on hover */
+        padding-left: 5px;
+    }
+
+    /* Contact Info Styling */
+    .contact-info {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-info li {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+
+    .icon-wrap {
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border: 1px solid #c5911e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        color: #5a0e0e; /* Maroon Icon */
+        font-size: 0.9rem;
+    }
+
+    /* Social Icons */
+    .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #5a0e0e; /* Maroon Background */
+        color: #fff; /* White Icon */
+        border-radius: 50%;
+        margin-right: 10px;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 3px 8px rgba(90, 14, 14, 0.3);
+    }
+
+    .social-links a:hover {
+        background: var(--royal-gold); /* Gold Background on hover */
+        color: #fff;
+        transform: translateY(-3px);
+    }
+
+    /* Copyright Area - Dark Maroon Strip for Contrast */
+    .copyright-area {
+        background-color: #5a0e0e; /* Matching Header Text Color */
+        padding: 20px 0;
+        margin-top: 50px;
+        font-size: 0.9rem;
+        color: #fff; /* White Text */
+    }
+</style>
+</body>
+</html>

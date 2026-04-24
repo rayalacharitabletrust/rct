@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation - Ahobilam</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ROYAL IVORY THEME --- */
+        :root {
+            --bg-ivory: #FFFAF0; 
+            --text-maroon: #5a0e0e; 
+            --royal-gold: #c5911e; 
+            --gold-hover: #d4a02e;
+        }
+
+        body {
+            background-color: #fdfbf7;
+            font-family: 'Montserrat', sans-serif;
+            padding-top: 80px; /* Prevent content from hiding behind fixed header */
+        }
+
+        /* --- HEADER STYLES --- */
+        .navbar {
+            background-color: var(--bg-ivory);
+            padding: 10px 20px;
+            box-shadow: 0 4px 20px rgba(90, 14, 14, 0.08); 
+            border-top: 4px solid var(--royal-gold);
+            border-bottom: 1px solid rgba(197, 145, 30, 0.2);
+        }
+
+        /* Brand Styling */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        /* Logo Circle Styling - Updated for Image */
+.logo-circle {
+    width: 55px;  /* సైజు కొంచెం పెంచాను */
+    height: 55px; 
+    background: #fff; /* ఇమేజ్ క్లియర్‌గా కనిపించడానికి వైట్ బ్యాక్‌గ్రౌండ్ */
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-right: 12px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 2px solid #5a0e0e;
+    overflow: hidden; /* సర్కిల్ బయట ఇమేజ్ రాకుండా కట్ చేస్తుంది */
+}
+
+/* ఇమేజ్ సర్కిల్‌లో ఫిట్ అయ్యేలా */
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ఫోటో సాగదీయకుండా కరెక్ట్‌గా వస్తుంది */
+}
+
+        /* Text Styling inside Brand */
+        .brand-text-group {
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-title {
+            font-family: 'Cinzel', serif; 
+            font-size: 1.4rem; 
+            color: #b8860b; 
+            font-weight: 700; 
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .brand-subtitle {
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 0.75rem; 
+            color: #5a0e0e; 
+            letter-spacing: 1.5px; 
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Menu Links */
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-maroon) !important;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--royal-gold) !important;
+            transform: translateY(-1px);
+        }
+
+        /* User Icon */
+        .user-icon {
+            font-size: 1.5rem;
+            color: var(--text-maroon);
+            margin-right: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .user-icon:hover {
+            color: var(--royal-gold);
+        }
+
+        /* Premium Button */
+        .btn-premium {
+            background: var(--royal-gold);
+            color: #fff !important;
+            font-weight: 700;
+            border-radius: 30px;
+            padding: 8px 25px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(197, 145, 30, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-premium:hover {
+            background: var(--text-maroon);
+            color: var(--royal-gold) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger Toggler */
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(90, 14, 14, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--bg-ivory);
+                padding: 15px;
+                border-top: 1px solid rgba(0,0,0,0.05);
+                margin-top: 10px;
+            }
+            .user-icon {
+                margin-right: 15px; /* Adjust spacing on mobile */
+            }
+            .btn-premium {
+                width: 100%; /* Full width button on mobile */
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.html">
+                  <div class="logo-circle">
+                  <img src="logo.png" alt="Rayala Logo" class="img-fluid">
+                  </div>
+    
+                    <div class="brand-text-group">
+                     <span class="brand-title">RAYALA</span>
+                     <span class="brand-subtitle">Charitable Trust</span>
+                    </div>
+                </a>
+            </a>
+
+            <div class="d-flex align-items-center order-lg-2 ms-auto">
+                <a href="profile.html" class="user-icon" title="My Account">
+                    <i class="far fa-circle-user"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Accommodation.html">Accommodation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Seva-&-Gallery.html">Seva & Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact-Us.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 d-none d-lg-block">
+                        <a class="btn btn-premium" href="#">Book Room</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="btn btn-premium" href="profile.html">Book Room</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<section class="hero-gallery-section py-4">
+    <div class="container">
+        
+        <div class="text-center mb-4">
+            <h5 class="text-gold ls-2">WELCOME TO</h5>
+            <h1 class="hotel-title">Rayala Charitable Trust <br> <span class="text-maroon">Accommodation</span></h1>
+            <div class="separator-gold"></div>
+        </div>
+
+        <div class="row g-2"> <div class="col-lg-8 col-md-12">
+                <div class="gallery-item main-img-box position-relative">
+                    <img src="rct hotel/hotel1.jpg" 
+                         alt="Hotel Front View" class="img-fluid w-100 h-100 object-fit-cover" onclick="openZoom(this)">
+                    <div class="img-label">Front View (Building)</div>
+                    <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="d-flex flex-column h-100 gap-2">
+                    
+                    <div class="gallery-item small-img-box position-relative flex-grow-1">
+                        <img src="rct hotel/rct-inside.jpg" 
+                             alt="Inner Room" class="img-fluid w-100 h-100 object-fit-cover" onclick="openZoom(this)">
+                        <div class="img-label">Inner Rooms</div>
+                        <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
+                    </div>
+
+                    <div class="gallery-item small-img-box position-relative flex-grow-1">
+                        <img src="rct hotel/rct-carparking.jpg" 
+                             alt="Dining Hall" class="img-fluid w-100 h-100 object-fit-cover" onclick="openZoom(this)">
+                        <div class="img-label">Dining Hall</div>
+                        <div class="overlay-icon"><i class="fas fa-search-plus"></i></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="modal fade" id="imageZoomModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"> <div class="modal-content bg-transparent border-0">
+            <div class="modal-body p-0 text-center position-relative">
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                <img src="" id="zoomedImage" class="img-fluid rounded shadow-lg" style="max-height: 90vh;">
+                <p id="zoomedCaption" class="text-white mt-2 font-cinzel"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Typography */
+    .hotel-title {
+        font-family: 'Cinzel', serif;
+        font-weight: 700;
+        color: #333;
+        font-size: 2.5rem;
+    }
+    .text-gold { color: #c5911e; }
+    .text-maroon { color: #5a0e0e; }
+    .ls-2 { letter-spacing: 2px; font-size: 0.9rem; font-weight: 600; }
+    
+    .separator-gold {
+        width: 100px; height: 3px; background: #c5911e; margin: 10px auto;
+    }
+
+    /* Grid Layout Heights */
+    .main-img-box {
+        height: 500px; /* Fixed height for large image */
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .small-img-box {
+        height: 246px; /* Half of 500 minus the gap */
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 991px) {
+        .main-img-box, .small-img-box {
+            height: 300px; /* Smaller height on mobile */
+        }
+    }
+
+    /* Image Styling */
+    .object-fit-cover {
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    /* Hover Effects */
+    .gallery-item:hover .object-fit-cover {
+        transform: scale(1.05); /* Smooth Zoom */
+    }
+    
+    .gallery-item:hover .overlay-icon {
+        opacity: 1;
+    }
+
+    /* Labels on Images */
+    .img-label {
+        position: absolute;
+        bottom: 15px; left: 15px;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        pointer-events: none; /* Let clicks pass through to image */
+    }
+
+    /* Zoom Icon Overlay */
+    .overlay-icon {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 2rem;
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        pointer-events: none;
+    }
+    
+    /* Modal Close Button Visibility */
+    .btn-close-white {
+        filter: invert(1);
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        padding: 10px;
+    }
+</style>
+
+<script>
+    function openZoom(element) {
+        var modalElement = new bootstrap.Modal(document.getElementById('imageZoomModal'));
+        var imageSrc = element.src; // Clicked image URL
+        var imageAlt = element.alt; // Image description
+        
+        document.getElementById('zoomedImage').src = imageSrc;
+        document.getElementById('zoomedCaption').innerText = imageAlt;
+        
+        modalElement.show();
+    }
+</script>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        
+        <div class="row align-items-center g-5">
+            
+            <div class="col-lg-6">
+                <h5 class="text-gold ls-2 text-uppercase">Spiritual Significance</h5>
+                <h2 class="text-maroon font-cinzel mb-4">A Kruthayuga Kshetra</h2>
+                <div class="separator-gold ms-0 mb-4" style="margin-left: 0;"></div>
+                
+                <p class="text-muted" style="line-height: 1.8;">
+                    According to the <strong>Brahmanda Purana</strong>, Ahobilam is the <em>Avatara Sthala</em> of Bhagavan Narasimha. It is one of the **108 Sri Vaishnava Divya Desams**.
+                </p>
+                <p class="text-muted" style="line-height: 1.8;">
+                    The great <strong>Sri Thirumangai Alwar</strong>, one of the 12 Alwars who lived in the 8th century AD, visited this holy place and composed ten *Pasurams* (hymns) dedicating them to the Lord of Ahobilam.
+                </p>
+
+                <div class="d-flex align-items-center mt-4 p-3 rounded" style="background-color: #fff9e6; border-left: 4px solid #c5911e;">
+                    <i class="fas fa-gopuram fa-2x text-maroon me-3"></i>
+                    <div>
+                        <h6 class="text-maroon fw-bold mb-0">Divya Desam</h6>
+                        <small class="text-muted">One of the holiest 108 Vishnu temples.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="p-4 p-md-5 rounded shadow-sm" style="background-color: #fdfbf7; border: 1px solid #eee;">
+                    <h3 class="text-maroon font-cinzel mb-4">Accommodation Details</h3>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="icon-circle bg-white shadow-sm text-gold">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-bold text-maroon mb-1">Prime Location</h5>
+                            <p class="text-muted small mb-0">
+                                Located just <strong>850 meters</strong> from the Diguva Ahobilam Sri Lakshmi Narasimha Swamy Temple. Walkable distance for Darshan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="icon-circle bg-white shadow-sm text-gold">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-bold text-maroon mb-1">24-Hour Check-out</h5>
+                            <p class="text-muted small mb-0">
+                                We follow a convenient <strong>24-Hour Check-in/Check-out</strong> system (24:00 Hours) to suit pilgrims arriving at any time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="icon-circle bg-white shadow-sm text-gold">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-bold text-maroon mb-1">Safe & Secure</h5>
+                            <p class="text-muted small mb-0">
+                                Equipped with CCTV surveillance, Parking Space, Hot Water, and RO Drinking Water for a safe stay.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .icon-circle {
+        width: 50px; 
+        height: 50px; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-size: 1.2rem;
+        border: 1px solid #f0f0f0;
+    }
+</style>
+
+<section class="rooms-section py-5" style="overflow-x: hidden;">
+    <div class="container">
+        
+        <div class="text-center mb-5">
+            <h5 class="text-gold ls-2">COMFORT & LUXURY</h5>
+            <h2 class="section-title text-maroon">Our Accommodation Types</h2>
+            <div class="separator-gold"></div>
+        </div>
+
+        <div class="card mb-5 border-0 shadow-lg overflow-hidden room-card">
+            <div class="row g-0">
+                <div class="col-lg-7">
+                    <div class="position-relative h-100">
+                        <img src="rct hotel/rct-non-ac1.jpg" 
+                             class="img-fluid w-100 h-100 object-fit-cover" 
+                             style="min-height: 250px;" alt="Non AC Room">
+                        <div class="price-badge">₹700 <small>/ Day</small></div>
+                        <div class="floor-badge">Ground Floor</div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column justify-content-center h-100">
+                        <h5 class="text-gold text-uppercase fw-bold small ls-2">Budget Friendly</h5>
+                        <h2 class="text-maroon font-cinzel mb-3">Non-AC Double Bed</h2>
+                        <p class="text-muted">Spacious room on Ground Floor. Best suited for elders who cannot climb stairs.</p>
+                        
+                        <ul class="list-unstyled mb-4 text-muted">
+                            <li class="mb-2"><i class="fas fa-bed text-gold me-2"></i> 2 Beds</li>
+                            <li class="mb-2"><i class="fas fa-fan text-gold me-2"></i> Ceiling Fan</li>
+                            <li class="mb-2"><i class="fas fa-level-down-alt text-gold me-2"></i> Ground Floor</li>
+                        </ul>
+
+                        <div class="d-grid gap-2 d-md-flex">
+                            <button class="btn btn-outline-maroon" data-bs-toggle="modal" data-bs-target="#modalNonAC">
+                                <i class="far fa-images"></i> View Photos
+                            </button>
+                            <button class="btn btn-maroon" onclick="openBookingForm('Non-AC Room (Ground Floor)')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 border-0 shadow-lg overflow-hidden room-card">
+            <div class="row g-0 flex-row-reverse"> <div class="col-lg-7">
+                    <div class="position-relative h-100">
+                        <img src="rct hotel/rct-ac1.jpg" 
+                             class="img-fluid w-100 h-100 object-fit-cover" 
+                             style="min-height: 250px;" alt="AC Double">
+                        <div class="price-badge">₹1200 <small>/ Day</small></div>
+                        <div class="floor-badge">1st Floor</div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column justify-content-center h-100 text-lg-end text-start">
+                        <h5 class="text-gold text-uppercase fw-bold small ls-2">Most Popular</h5>
+                        <h2 class="text-maroon font-cinzel mb-3">AC Double Bed</h2>
+                        <p class="text-muted">Premium AC Room on 1st Floor. Includes King Size beds & Geyser facility.</p>
+                        
+                        <ul class="list-unstyled mb-4 text-muted d-flex flex-column align-items-start align-items-lg-end">
+                            <li class="mb-2"><i class="fas fa-snowflake text-gold me-2"></i> AC Room</li>
+                            <li class="mb-2"><i class="fas fa-bed text-gold me-2"></i> King Size</li>
+                            <li class="mb-2"><i class="fas fa-level-up-alt text-gold me-2"></i> 1st Floor</li>
+                        </ul>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-lg-end">
+                            <button class="btn btn-outline-maroon" data-bs-toggle="modal" data-bs-target="#modalAC2">
+                                <i class="far fa-images"></i> View Photos
+                            </button>
+                            <button class="btn btn-maroon" onclick="openBookingForm('AC Double Bed (1st Floor)')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 border-0 shadow-lg overflow-hidden room-card">
+            <div class="row g-0">
+                <div class="col-lg-7">
+                    <div class="position-relative h-100">
+                        <img src="rct hotel/rct-3bed-1.jpg" 
+                             class="img-fluid w-100 h-100 object-fit-cover" 
+                             style="min-height: 250px;" alt="AC Triple">
+                        <div class="price-badge">₹1500 <small>/ Day</small></div>
+                        <div class="floor-badge">Ground Floor</div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column justify-content-center h-100">
+                        <h5 class="text-gold text-uppercase fw-bold small ls-2">Family Suite</h5>
+                        <h2 class="text-maroon font-cinzel mb-3">AC Triple Bed</h2>
+                        <p class="text-muted">Extra large room with 3 Beds. Ground Floor access, perfect for big families.</p>
+                        
+                        <ul class="list-unstyled mb-4 text-muted">
+                            <li class="mb-2"><i class="fas fa-users text-gold me-2"></i> 3 Beds</li>
+                            <li class="mb-2"><i class="fas fa-snowflake text-gold me-2"></i> AC + Fan</li>
+                            <li class="mb-2"><i class="fas fa-level-down-alt text-gold me-2"></i> Ground Floor</li>
+                        </ul>
+
+                        <div class="d-grid gap-2 d-md-flex">
+                            <button class="btn btn-outline-maroon" data-bs-toggle="modal" data-bs-target="#modalAC3">
+                                <i class="far fa-images"></i> View Photos
+                            </button>
+                            <button class="btn btn-maroon" onclick="openBookingForm('AC Triple Bed (Ground Floor)')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Colors */
+    .text-maroon { color: #5a0e0e; }
+    .text-gold { color: #c5911e; }
+    .bg-maroon { background-color: #5a0e0e; }
+    
+    /* Fonts */
+    .font-cinzel { font-family: 'Cinzel', serif; font-weight: 700; }
+    .ls-2 { letter-spacing: 2px; }
+
+    /* Buttons */
+    .btn-maroon {
+        background-color: #5a0e0e;
+        color: #fff;
+        padding: 10px 25px;
+        text-transform: uppercase;
+        font-weight: 600;
+        border: none;
+        transition: 0.3s;
+    }
+    .btn-maroon:hover {
+        background-color: #c5911e;
+        color: #fff;
+    }
+
+    .btn-outline-maroon {
+        border: 2px solid #5a0e0e;
+        color: #5a0e0e;
+        padding: 10px 25px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background: transparent;
+        transition: 0.3s;
+    }
+    .btn-outline-maroon:hover {
+        background-color: #5a0e0e;
+        color: #fff;
+    }
+
+    /* Badges */
+    .price-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: #5a0e0e;
+        color: #fff;
+        padding: 8px 15px;
+        font-family: 'Cinzel', serif;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .floor-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #5a0e0e;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.85rem;
+    }
+
+    /* Image Fix */
+    .object-fit-cover {
+        object-fit: cover;
+    }
+    
+    /* Card Animation */
+    .room-card {
+        transition: transform 0.3s ease;
+    }
+    .room-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="modal fade" id="modalNonAC" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-maroon">Non-AC Room Photos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="carouselNonAC" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        
+                        <div class="carousel-item active">
+                            <img src="rct hotel/rct-non-ac1.jpg" class="d-block w-100 room-popup-img" alt="Main View">
+                            <div class="carousel-caption d-none d-md-block">Main Bedroom View</div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="rct hotel/rct-non-ac2.jpg" class="d-block w-100 room-popup-img" alt="Bathroom">
+                            <div class="carousel-caption d-none d-md-block">Attached Bathroom</div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="rct hotel/rct-non-ac3.jpg" class="d-block w-100 room-popup-img" alt="Corridor">
+                            <div class="carousel-caption d-none d-md-block">Entrance View</div>
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselNonAC" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselNonAC" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAC2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-maroon">AC Double Bed Photos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="carouselAC2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        
+                        <div class="carousel-item active">
+                            <img src="rct hotel/rct-ac1.jpg" class="d-block w-100 room-popup-img" alt="AC Room">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="rct hotel/rct-ac2.jpg" class="d-block w-100 room-popup-img" alt="Side View">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="rct hotel/rct-ac3.jpg" class="d-block w-100 room-popup-img" alt="Bathroom">
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAC2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselAC2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAC3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-maroon">AC Triple Bed Photos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="carouselAC3" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        
+                        <div class="carousel-item active">
+                            <img src="rct hotel/rct-3bed-1.jpg" class="d-block w-100 room-popup-img" alt="AC Room">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="rct hotel/rct-3bed-2.jpg" class="d-block w-100 room-popup-img" alt="Side View">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="rct hotel/rct-3bed-3.jpg" class="d-block w-100 room-popup-img" alt="Bathroom">
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAC3" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselAC3" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        
+        <div class="row align-items-center">
+            
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-gold ls-2">PLEASE NOTE</h5>
+                <h2 class="section-title text-maroon">House Rules &<br>Guidelines</h2>
+                <div class="separator-gold ms-0"></div>
+                <p class="text-muted mt-3">
+                    To maintain the sanctity of the pilgrimage and ensure a peaceful stay for everyone, we request all guests to strictly follow these guidelines.
+                    <br><strong>(భక్తులు గమనించవలసిన ముఖ్య విషయాలు)</strong>
+                </p>
+                <a href="tel:+919876543210" class="btn btn-outline-maroon mt-3">
+                    <i class="fas fa-phone-alt me-2"></i> Contact Office
+                </a>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="row g-3">
+                    
+                    <div class="col-md-6">
+                        <div class="rule-card">
+                            <div class="rule-icon"><i class="far fa-clock"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Check-in & Check-out</h6>
+                                <p class="text-muted small mb-0">24 Hours Check-out time. Please inform reception if extending stay.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="rule-card bg-light-red"> <div class="rule-icon text-danger"><i class="fas fa-ban"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-danger mb-1">Strictly Prohibited</h6>
+                                <p class="text-danger small mb-0" style="opacity: 0.8;">Alcohol, Smoking, and Non-Veg food are strictly not allowed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="rule-card">
+                            <div class="rule-icon"><i class="fas fa-id-card"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">ID Proof Mandatory</h6>
+                                <p class="text-muted small mb-0">Original Govt ID (Aadhaar) is compulsory for all guests at check-in.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="rule-card">
+                            <div class="rule-icon"><i class="fas fa-door-closed"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Gate Closing Time</h6>
+                                <p class="text-muted small mb-0">Main gate closes at <strong>10:00 PM</strong>. Please plan your darshan accordingly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="rule-card">
+                            <div class="rule-icon"><i class="fas fa-shower"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Hot Water Timings</h6>
+                                <p class="text-muted small mb-0">Solar hot water is available 24/7. Geyser available in AC rooms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="rule-card">
+                            <div class="rule-icon"><i class="fas fa-om"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Peace & Devotion</h6>
+                                <p class="text-muted small mb-0">Please maintain silence and keep the premises clean.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .rule-card {
+        background: #fdfbf7;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #eee;
+        transition: 0.3s;
+    }
+    
+    .rule-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-color: #c5911e;
+    }
+
+    .rule-icon {
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #c5911e;
+        margin-right: 15px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        flex-shrink: 0; /* ఐకాన్ సైజు తగ్గకుండా చూస్తుంది */
+    }
+
+    /* Red Background for Prohibited Items */
+    .bg-light-red {
+        background-color: #fff5f5;
+        border-color: #ffcccc;
+    }
+    
+    .text-danger {
+        color: #dc3545 !important;
+    }
+    
+    .separator-gold.ms-0 {
+        margin-left: 0;
+        margin-right: auto;
+    }
+</style>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        
+        <div class="text-center mb-5">
+            <h5 class="text-gold ls-2">GOT QUESTIONS?</h5>
+            <h2 class="section-title text-maroon">Frequently Asked Questions</h2>
+            <div class="separator-gold"></div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="roomsFAQ">
+
+                    <div class="accordion-item mb-3 shadow-sm border-0">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed fw-bold text-maroon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                <i class="far fa-clock me-2 text-gold"></i> What are the Check-in and Check-out timings?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#roomsFAQ">
+                            <div class="accordion-body text-muted">
+                                We follow a <strong>24-Hour Check-in/Check-out system</strong>. This means your checkout time will be 24 hours from the time you check in. However, please inform the reception in advance if you plan to arrive late at night.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3 shadow-sm border-0">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed fw-bold text-maroon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                <i class="fas fa-hot-tub me-2 text-gold"></i> Is Hot Water available for bathing?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#roomsFAQ">
+                            <div class="accordion-body text-muted">
+                                Yes, absolutely. We have <strong>Solar Water Heaters</strong> providing hot water 24/7. Additionally, our AC Rooms are equipped with personal <strong>Geysers</strong> for your convenience.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3 shadow-sm border-0">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed fw-bold text-maroon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                <i class="fas fa-calendar-check me-2 text-gold"></i> How can I book a room?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#roomsFAQ">
+                            <div class="accordion-body text-muted">
+                                You can click on the <strong>"Book Now"</strong> button next to your preferred room type and fill out the enquiry form. Alternatively, you can call our office directly at <strong>+91 98765 43210</strong>. Advance booking is recommended during weekends and festival days.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3 shadow-sm border-0">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed fw-bold text-maroon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                <i class="fas fa-ban me-2 text-danger"></i> Are there any strict rules for guests?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#roomsFAQ">
+                            <div class="accordion-body text-muted">
+                                Yes, to maintain the sanctity of the pilgrimage:
+                                <ul>
+                                    <li>Unmarried couples are <strong>strictly not allowed</strong>.</li>
+                                    <li>Consumption of <strong>Alcohol, Smoking, and Non-Veg food</strong> is prohibited inside the premises.</li>
+                                    <li>Valid ID Proof (Aadhaar) is mandatory for all adults.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3 shadow-sm border-0">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed fw-bold text-maroon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                <i class="fas fa-utensils me-2 text-gold"></i> Is food available at the accommodation?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#roomsFAQ">
+                            <div class="accordion-body text-muted">
+                                Yes, Rayala Charitable Trust provides <strong>Nitya Annadanam (Free Food)</strong>. Wholesome and hygienic Lunch and Dinner are served to all pilgrims staying with us.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3 shadow-sm border-0">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed fw-bold text-maroon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                <i class="fas fa-car me-2 text-gold"></i> Is there accommodation for Drivers?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#roomsFAQ">
+                            <div class="accordion-body text-muted">
+                                Yes, we have a common hall/dormitory facility where drivers can rest and freshen up. Please check with the reception upon arrival for availability.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .accordion-button:not(.collapsed) {
+        background-color: #fffbf0; /* Light Gold BG when open */
+        color: #5a0e0e; /* Maroon Text */
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+    }
+    .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(0,0,0,.125);
+    }
+    .accordion-item {
+        border-radius: 10px !important;
+        overflow: hidden;
+    }
+</style>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        
+        <div class="text-center mb-5">
+            <h5 class="text-gold ls-2 text-uppercase">Important Policies</h5>
+            <h2 class="section-title text-maroon">Terms & Conditions</h2>
+            <div class="separator-gold"></div>
+            <p class="text-muted mt-3">By booking a stay, you agree to abide by the following rules.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="terms-box p-4 p-md-5 rounded shadow-sm border border-light">
+                    
+                    <ul class="list-unstyled">
+                        
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fas fa-id-card text-maroon mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">ID Proof & Eligibility</h6>
+                                <p class="text-muted small mb-0">
+                                    All guests must present a valid Government ID proof (Aadhaar, Driving License, Voter ID, etc.) at the time of check-in. Guests under the age of 18 are not allowed without guardians. <strong>Unmarried couples and single guests are strictly not allowed.</strong>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fas fa-ban text-danger mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h6 class="fw-bold text-danger mb-1">Strict Prohibitions</h6>
+                                <p class="text-danger small mb-0" style="opacity: 0.8;">
+                                    Consumption of Alcohol, Smoking, and Non-Vegetarian food is strictly prohibited inside the premises. Illegal items are not allowed.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fas fa-clock text-maroon mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Check-in/Out & Late Arrival</h6>
+                                <p class="text-muted small mb-0">
+                                    Standard Check-in/Check-out time is 24 Hours. Guests must reach before 3:00 PM if opting for Pay at Check-in. Late arrivals must inform in advance, otherwise the booking may be cancelled. Early check-in or late check-out is subject to availability and may be chargeable.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fas fa-file-invoice-dollar text-maroon mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Cancellation & Refunds</h6>
+                                <p class="text-muted small mb-0">
+                                    Bookings once confirmed are non-refundable. In case of gate closing rules or failure to check-in, no refund will be provided. The management is not responsible for cancellations due to unavoidable situations.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fas fa-users text-maroon mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Room Capacity & Facilities</h6>
+                                <p class="text-muted small mb-0">
+                                    Room capacity limits are strictly followed. Amenities like AC, Hot Water, etc., are subject to availability and power supply. Management reserves the right to change facilities without prior notice.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-gavel text-maroon mt-1 me-3 fs-5"></i>
+                            <div>
+                                <h6 class="fw-bold text-maroon mb-1">Management Rights</h6>
+                                <p class="text-muted small mb-0">
+                                    The management is not responsible for loss or theft of personal items. Guests are responsible for their belongings. Admission is reserved for Yatris following religious principles.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .terms-box {
+        background-color: #fdfbf7; /* Light Ivory Background */
+        border-left: 5px solid #c5911e; /* Gold Border on Left */
+    }
+    .text-maroon { color: #5a0e0e; }
+    .text-gold { color: #c5911e; }
+    .ls-2 { letter-spacing: 2px; }
+</style>
+
+<style>
+    /* FOOTER STYLES (Light Theme) */
+    .footer-section {
+        background-color: #FFFAF0; /* Same Ivory color as Header */
+        color: #333; /* Dark text for readability */
+        padding-top: 60px;
+        margin-top: 50px;
+        border-top: 5px solid var(--royal-gold); /* Gold Border on top */
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.05); /* Slight shadow */
+    }
+
+    .footer-title {
+        font-family: 'Cinzel', serif;
+        color: #5a0e0e; /* Maroon Text */
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    
+    .footer-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .footer-heading {
+        font-family: 'Playfair Display', serif;
+        color: #5a0e0e; /* Maroon Heading */
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    /* Gold line under headings */
+    .footer-heading::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background-color: var(--royal-gold);
+    }
+
+    /* Links Styling */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #444;
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+
+    .footer-links a:hover {
+        color: #c5911e; /* Gold on hover */
+        padding-left: 5px;
+    }
+
+    /* Contact Info Styling */
+    .contact-info {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-info li {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+
+    .icon-wrap {
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border: 1px solid #c5911e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        color: #5a0e0e; /* Maroon Icon */
+        font-size: 0.9rem;
+    }
+
+    /* Social Icons */
+    .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #5a0e0e; /* Maroon Background */
+        color: #fff; /* White Icon */
+        border-radius: 50%;
+        margin-right: 10px;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 3px 8px rgba(90, 14, 14, 0.3);
+    }
+
+    .social-links a:hover {
+        background: var(--royal-gold); /* Gold Background on hover */
+        color: #fff;
+        transform: translateY(-3px);
+    }
+
+    /* Copyright Area - Dark Maroon Strip for Contrast */
+    .copyright-area {
+        background-color: #5a0e0e; /* Matching Header Text Color */
+        padding: 20px 0;
+        margin-top: 50px;
+        font-size: 0.9rem;
+        color: #fff; /* White Text */
+    }
+</style>
+
+<div class="modal fade" id="bookingFormModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            
+            <div class="modal-header text-white" style="background: linear-gradient(to right, #5a0e0e, #800000);">
+                <h5 class="modal-title font-cinzel">Book Your Stay</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            
+            <div class="modal-body p-4">
+                <form id="finalBookingForm">
+                    <input type="hidden" name="action" value="book"> 
+
+                    <div class="row mb-3">
+                        <div class="col-8">
+                            <label class="form-label text-maroon fw-bold small">Room Type</label>
+                            <input type="text" class="form-control bg-light" id="selectedRoomType" readonly>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label text-maroon fw-bold small">No. of Rooms</label>
+                            <input type="number" class="form-control fw-bold border-warning text-center" id="roomCount" min="1" value="1" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Full Name <span class="text-danger">*</span></label>
+                        <input type="text" id="guestName" class="form-control" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label small fw-bold">Mobile <span class="text-danger">*</span></label>
+                            <input type="tel" id="guestMobile" class="form-control" placeholder="10-digit" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label small fw-bold">Email</label>
+                            <input type="email" id="guestEmail" class="form-control" placeholder="Optional">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Address / City <span class="text-danger">*</span></label>
+                        <textarea id="guestAddress" class="form-control" rows="2" placeholder="Ex: Hyderabad" required></textarea>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label small fw-bold">Check-in <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="checkInDate" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label small fw-bold">Check-out <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="checkOutDate" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <label class="form-label small fw-bold">Adults</label>
+                            <input type="number" id="guestAdults" class="form-control" value="2" min="1" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label small fw-bold">Children</label>
+                            <input type="number" id="guestChildren" class="form-control" value="0" min="0">
+                        </div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-maroon py-2 fw-bold" style="background: #5a0e0e; color: white;">REQUEST BOOKING</button>
+                    </div>
+                    
+                    <div class="text-center mt-2">
+                        <small class="text-muted">Payment to be made after confirmation.</small>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title"><i class="fas fa-wallet me-2"></i>Complete Payment</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            
+            <div class="modal-body p-4">
+                
+                <div class="text-center mb-4">
+                    <p class="text-muted small mb-0">Total Payable Amount</p>
+                    <h3 class="text-maroon fw-bold" id="payAmount">₹0</h3>
+                </div>
+
+                <div class="text-center bg-light p-4 rounded border mb-4">
+                    
+                    <img src="qr-code.jpg" alt="UPI QR" class="img-fluid border p-1 rounded bg-white mb-3" style="width:150px;">
+                    
+                    <p class="fw-bold text-muted small mb-1">Pay via PhonePe / GPay to:</p>
+                    
+                    <h4 class="fw-bold text-dark mb-0">8464919219</h4> 
+                    <small class="text-success fw-bold">(venkata prathap)</small>
+                </div>
+
+                <form id="paymentForm">
+                    <p class="small text-center text-muted mb-2">After payment, enter details below:</p>
+                    
+                    <input type="hidden" name="action" value="pay">
+                    <input type="hidden" id="payMobile">
+                    
+                    <div class="mb-3 text-start">
+                        <label class="form-label small fw-bold">Your Mobile Number (From which you paid)</label>
+                        <input type="tel" id="senderPhone" class="form-control" placeholder="Ex: 9988776655" pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div class="mb-3 text-start">
+                        <label class="form-label small fw-bold">Transaction ID / UTR Number</label>
+                        <input type="text" id="transactionId" class="form-control border-success" placeholder="Ex: T2302111234" required>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success fw-bold py-2">
+                            Submit Payment Details <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // ⚠️ మీ కొత్త Google Apps Script URL ఇక్కడ పేస్ట్ చేయండి
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxyeq4gjjYxUQfofQt9YZrYhY217Of1PrNZzGaS66A6WpBp-6E3qX1xoKfdiDvg9QXMOw/exec'; 
+    
+    let roomLimits = {}; 
+
+    // 1. LIMITS FETCH
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch(scriptURL)
+            .then(res => res.json())
+            .then(data => { roomLimits = data; });
+            
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkInDate').setAttribute('min', today);
+        document.getElementById('checkInDate').addEventListener('change', function() {
+            document.getElementById('checkOutDate').setAttribute('min', this.value);
+        });
+    });
+
+    // 2. OPEN FORM
+    function openBookingForm(roomName) {
+        document.getElementById('selectedRoomType').value = roomName;
+        let maxLimit = roomLimits[roomName] || 10;
+        let roomInput = document.getElementById('roomCount');
+        roomInput.setAttribute("max", maxLimit);
+        roomInput.setAttribute("placeholder", "Max " + maxLimit);
+        roomInput.value = 1;
+        new bootstrap.Modal(document.getElementById('bookingFormModal')).show();
+    }
+
+    // 3. SUBMIT BOOKING
+    document.getElementById('finalBookingForm').addEventListener('submit', e => {
+        e.preventDefault();
+        var btn = e.target.querySelector('button');
+        var originalText = btn.innerText;
+        btn.innerText = "Sending Request..."; btn.disabled = true;
+
+        var formData = new FormData();
+        formData.append("action", "book"); 
+        formData.append("Date", new Date().toLocaleString());
+        formData.append("Room Type", document.getElementById('selectedRoomType').value);
+        formData.append("NoOfRooms", document.getElementById('roomCount').value);
+        formData.append("Name", document.getElementById('guestName').value);
+        formData.append("Mobile", document.getElementById('guestMobile').value);
+        formData.append("Email", document.getElementById('guestEmail').value);
+        formData.append("Address", document.getElementById('guestAddress').value);
+        formData.append("Check-In", document.getElementById('checkInDate').value);
+        formData.append("Check-Out", document.getElementById('checkOutDate').value);
+        formData.append("Adults", document.getElementById('guestAdults').value);
+        formData.append("Children", document.getElementById('guestChildren').value);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+            if(data.result === 'success') {
+                alert("✅ Request Sent! Status: PENDING.\nPlease check back later for Payment.");
+                location.reload();
+            } else {
+                alert("⚠️ " + data.message);
+                btn.innerText = originalText; btn.disabled = false;
+            }
+        })
+        .catch(err => {
+            alert("Network Error");
+            btn.innerText = originalText; btn.disabled = false;
+        });
+    });
+
+    // 4. CHECK STATUS (Fixed: Case Insensitive Logic)
+    function checkBooking() {
+        var mobile = document.getElementById('uniqueSearchMobile').value;
+        if(mobile.length !== 10) { alert("Enter valid 10-digit mobile"); return; }
+        
+        var resDiv = document.getElementById('bookingResults');
+        resDiv.innerHTML = '<p class="text-center text-muted"><i class="fas fa-spinner fa-spin"></i> Checking...</p>';
+
+        fetch(scriptURL + "?mobile=" + mobile)
+        .then(res => res.json())
+        .then(data => {
+            resDiv.innerHTML = "";
+            if(data.status === "found") {
+                data.data.forEach((booking, index) => {
+                    let btnHTML = "";
+                    
+                    // *** FIX: Convert status to lowercase for checking ***
+                    let statusLower = booking.bookingStatus.toLowerCase().trim();
+                    let displayStatus = booking.bookingStatus.toUpperCase(); // Show in CAPS
+                    let badgeClass = "bg-warning text-dark"; 
+
+                    if (statusLower === "confirmed") {
+                        badgeClass = "bg-success text-white";
+                        
+                        // Check if Not Paid (Empty or "Not Paid")
+                        if (!booking.txnId || booking.txnId === "Not Paid" || booking.txnId === "") {
+                             btnHTML = `
+                                <div class="mt-3 border-top pt-3">
+                                    <button class="btn btn-success w-100 fw-bold shadow-sm" onclick="openPaymentModal('${booking.amount}', '${mobile}')">
+                                        <i class="fas fa-qrcode me-2"></i> PAY NOW ₹${booking.amount}
+                                    </button>
+                                    <small class="text-muted d-block text-center mt-1">Click to scan QR</small>
+                                </div>`;
+                        } else {
+                             btnHTML = `
+                                <div class="mt-3 border-top pt-2 text-center">
+                                    <span class="badge bg-success p-2"><i class="fas fa-check-circle me-1"></i> PAID (ID: ${booking.txnId})</span>
+                                </div>`;
+                        }
+                    } else if (statusLower === "cancelled") {
+                        badgeClass = "bg-danger text-white";
+                    }
+
+                    resDiv.innerHTML += `
+                        <div class="ticket-card mb-4 border rounded shadow-sm bg-white overflow-hidden">
+                            <div class="ticket-header p-3 d-flex justify-content-between align-items-center bg-light border-bottom">
+                                <div><small class="text-muted d-block" style="font-size:0.7rem;">BOOKING ID</small><span class="fw-bold text-maroon">#RCT-${1000 + index + 1}</span></div>
+                                <span class="badge ${badgeClass} px-3 py-2 rounded-pill">${displayStatus}</span>
+                            </div>
+                            <div class="ticket-body p-3">
+                                <p class="mb-1"><strong>Name:</strong> ${booking.name}</p>
+                                <p class="mb-1"><strong>Room:</strong> ${booking.room}</p>
+                                <p class="mb-1"><strong>Dates:</strong> ${booking.checkin} to ${booking.checkout}</p>
+                                <h5 class="text-end text-maroon">₹${booking.amount}</h5>
+                                ${btnHTML}
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                resDiv.innerHTML = "<div class='alert alert-danger text-center'>No bookings found.</div>";
+            }
+        });
+    }
+
+    // 5. OPEN PAYMENT MODAL
+    function openPaymentModal(amount, mobile) {
+        document.getElementById('payAmount').innerText = "₹" + amount;
+        document.getElementById('payMobile').value = mobile;
+        new bootstrap.Modal(document.getElementById('paymentModal')).show();
+    }
+
+    // 6. SUBMIT PAYMENT
+    var payForm = document.getElementById('paymentForm');
+    if(payForm) {
+        payForm.addEventListener('submit', e => {
+            e.preventDefault();
+            var btn = e.target.querySelector('button');
+            btn.innerText = "Verifying..."; btn.disabled = true;
+
+            var txnID = document.getElementById('transactionId').value;
+            var senderPhInput = document.getElementById('senderPhone');
+            var senderPh = senderPhInput ? senderPhInput.value : "";
+            
+            var finalTxnData = txnID;
+            if(senderPh) finalTxnData += " (Ph: " + senderPh + ")";
+
+            var formData = new FormData();
+            formData.append("action", "pay");
+            formData.append("Mobile", document.getElementById('payMobile').value);
+            formData.append("TransactionID", finalTxnData);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+            .then(res => res.json())
+            .then(data => {
+                if(data.result === 'success') {
+                    alert("✅ Payment Updated! Booking Fully Confirmed.");
+                    location.reload();
+                } else {
+                    alert("❌ Error: " + data.message);
+                    btn.innerText = "Submit Payment Details"; btn.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert("Network Error");
+                btn.innerText = "Submit Payment Details"; btn.disabled = false;
+            });
+        });
+    }
+</script>
+</body>
+<footer class="footer-section">
+    <div class="container">
+        <div class="row g-4">
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-brand">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                        <h3 class="footer-title mb-0">Rayala Charitable Trust</h3>
+                    </div>
+                    <p class="footer-desc">
+                        Dedicated to serving the devotees of Lord Narasimha Swamy in Ahobilam. 
+                        Providing safe, hygienic, and affordable accommodation since 2013.
+                    </p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Accommodation.html">Rooms</a></li>
+                    <li><a href="Seva-&-Gallery.html">Gallery</a></li>
+                    <li><a href="Contact-Us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="contact-info">
+                    <li>
+                        <div class="icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+                        <span>Ahobilam, Nandyal Dist,<br>Andhra Pradesh - 518543</span>
+                    </li>
+                    <li>
+                        <div class="icon-wrap"><i class="fas fa-phone-alt"></i></div>
+                        <span>+91 98662 18572</span>
+                    </li>
+                    <li>
+                        <div class="icon-wrap"><i class="fas fa-envelope"></i></div>
+                        <span>info@rayalatrust.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="footer-heading">Find Us</h4>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.586616460627!2d78.6756813148408!3d15.132663989467642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5c5c0c0c0c0c1%3A0x0!2sAhobilam!5e0!3m2!1sen!2sin!4v1612345678901" 
+                        width="100%" height="150" style="border:0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="copyright-area">
+        <div class="container text-center">
+            <p class="mb-0">
+                © 2026 <strong>Rayala Charitable Trust</strong>. All Rights Reserved. 
+            </p>
+        </div>
+    </div>
+</footer>
+</html>
