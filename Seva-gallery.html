@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Rayala Charitable Trust</title>
+    <title>Seva & Gallery - Rayala Trust</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,7 +23,7 @@
             padding-top: 80px;
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR STYLES --- */
         .navbar {
             background-color: var(--bg-ivory);
             padding: 10px 20px;
@@ -43,77 +43,116 @@
         .nav-link:hover, .nav-link.active { color: var(--royal-gold) !important; }
         .btn-premium { background: var(--royal-gold); color: #fff !important; font-weight: 700; border-radius: 30px; padding: 8px 25px; border: none; }
 
-        /* --- CONTACT SECTION --- */
-        .contact-header { text-align: center; padding: 40px 0 20px; }
-        .section-title { font-family: 'Cinzel', serif; color: var(--text-maroon); font-weight: 700; }
-        
-        .contact-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            height: 100%;
-            border-top: 4px solid var(--text-maroon);
+        /* --- PAGE HEADER --- */
+        .page-header {
+            text-align: center;
+            padding: 50px 0 30px;
         }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        .icon-box {
-            width: 50px; height: 50px;
-            background: var(--bg-ivory);
+        .section-title {
+            font-family: 'Cinzel', serif;
             color: var(--text-maroon);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem;
-            margin-right: 15px;
-            flex-shrink: 0;
-            border: 1px solid var(--royal-gold);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
-        .info-content h5 { font-family: 'Cinzel', serif; font-size: 1.1rem; margin-bottom: 5px; color: #333; }
-        .info-content p { color: #666; font-size: 0.95rem; margin-bottom: 0; line-height: 1.6; }
-        .info-content a { color: var(--text-maroon); text-decoration: none; font-weight: 600; }
-        .info-content a:hover { color: var(--royal-gold); }
+        .section-subtitle {
+            color: #666;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .divider-icon {
+            color: var(--royal-gold);
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
 
-        /* --- MAP --- */
-        .map-container {
+        /* --- SINGLE BIG SEVA CARD --- */
+        .main-seva-card {
+            background: #fff;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: 300px;
-            border: 1px solid #ddd;
+            box-shadow: 0 10px 30px rgba(90, 14, 14, 0.1);
+            border: 1px solid rgba(197, 145, 30, 0.2);
+            margin-bottom: 50px;
+        }
+        .seva-img-large {
+            height: 350px; /* పెద్ద ఫోటో కోసం */
+            width: 100%;
+            object-fit: cover;
+        }
+        .seva-content {
+            padding: 40px;
+            text-align: center;
+        }
+        .seva-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--royal-gold);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .seva-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+        .btn-donate-big {
+            background-color: var(--text-maroon);
+            color: white;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            box-shadow: 0 5px 15px rgba(90, 14, 14, 0.3);
+            transition: all 0.3s;
+        }
+        .btn-donate-big:hover {
+            background-color: var(--royal-gold);
+            transform: translateY(-3px);
         }
 
-        /* --- FORM --- */
-        .form-control {
-            border: 1px solid #ddd;
-            padding: 12px;
-            border-radius: 8px;
+        /* --- FUTURE GOALS (Simple Text) --- */
+        .future-goals {
             background-color: #fdfbf7;
+            padding: 30px;
+            border-top: 1px dashed #ccc;
+            text-align: center;
+            color: #777;
         }
-        .form-control:focus {
-            border-color: var(--royal-gold);
-            box-shadow: none;
-            background-color: #fff;
+
+        /* --- GALLERY GRID --- */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            height: 250px; /* Fixed height for neat grid */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .btn-send {
-            background: var(--text-maroon);
-            color: white;
-            padding: 12px;
+        .gallery-item img {
             width: 100%;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            opacity: 0;
             transition: 0.3s;
         }
-        .btn-send:hover {
-            background: var(--royal-gold);
-            transform: translateY(-2px);
-        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-text { color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; }
 
     </style>
 </head>
@@ -135,8 +174,8 @@
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="Accommodation.html">Accommodation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Seva-Gallery.html">Seva & Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="Contact-Us.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Seva-Gallery.html">Seva & Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact-Us.html">Contact</a></li>
                     <li class="nav-item ms-3">
                         <a class="btn btn-premium" href="Accommodation.html">Book Room</a>
                     </li>
@@ -145,96 +184,98 @@
         </div>
     </nav>
 
-    <div class="container contact-header">
-        <h1 class="section-title">Get in Touch</h1>
-        <p class="text-muted">We are here to help you with your pilgrimage to Ahobilam.</p>
+    <div class="container page-header">
+        <h1 class="section-title">Our Main Seva</h1>
+        <div class="divider-icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <p class="section-subtitle">"Serving humanity is serving the divinity." <br> Join us in our mission to feed the devotees of Lord Narasimha.</p>
     </div>
 
-    <div class="container mb-5">
-        <div class="row g-4">
-            
-            <div class="col-lg-6">
-                <div class="contact-card">
-                    <h4 class="mb-4 text-maroon font-cinzel">Contact Information</h4>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <div class="main-seva-card">
+                    <img src="annadanam.jpg" alt="Nitya Annadanam" class="seva-img-large">
                     
-                    <div class="info-item">
-                        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="info-content">
-                            <h5>Our Location</h5>
-                            <p>Rayala Charitable Trust,<br>Near Temple Street, Upper/Lower Ahobilam,<br>Allagadda Mandal, Nandyal Dist, AP - 518543.</p>
-                        </div>
-                    </div>
+                    <div class="seva-content">
+                        <h2 class="section-title" style="font-size: 2rem;">Nitya Annadanam</h2>
+                        <div class="divider-icon"><i class="fas fa-utensils"></i></div>
+                        
+                        <p class="seva-quote">"Annadhanam is the most sacred of all charities."</p>
+                        
+                        <p class="seva-text">
+                            At Rayala Charitable Trust, we believe that no devotee visiting the holy abode of Ahobilam should go hungry. 
+                            We provide <strong>free, hygienic, and wholesome meals</strong> to pilgrims every day. 
+                            Your small contribution helps us serve hot meals to hundreds of devotees who trek the difficult hills of Nallamalla to see the Lord.
+                        </p>
 
-                    <div class="info-item">
-                        <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
-                        <div class="info-content">
-                            <h5>Call Us</h5>
-                            <p><a href="tel:+919866218572">+91 98662 18572</a></p>
-                            <p class="small text-muted">(Available 9:00 AM - 9:00 PM)</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
-                        <div class="info-content">
-                            <h5>Email Us</h5>
-                            <p><a href="mailto:rayalatrust@gmail.com">rayalatrust@gmail.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="map-container mt-4">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.643325603856!2d78.67499407460338!3d15.127455167098734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5a587d54b6851%3A0xf650893345447a12!2sAhobilam%20Narasimha%20Swamy%20Temple!5e0!3m2!1sen!2sin!4v1707641234567!5m2!1sen!2sin" 
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                        </iframe>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="contact-card">
-                    <h4 class="mb-4 text-maroon font-cinzel">Send a Message</h4>
-                    <p class="small text-muted mb-4">Have a query? Fill the form below and we will reply to you on WhatsApp instantly.</p>
-
-                    <form onsubmit="sendToWhatsApp(event)">
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Your Name</label>
-                            <input type="text" id="cName" class="form-control" placeholder="Enter full name" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Mobile Number</label>
-                            <input type="tel" id="cMobile" class="form-control" placeholder="10-digit mobile" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Subject / Purpose</label>
-                            <select id="cSubject" class="form-select form-control">
-                                <option>Room Enquiry</option>
-                                <option>Donation / Seva</option>
-                                <option>General Enquiry</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label small fw-bold">Message</label>
-                            <textarea id="cMessage" class="form-control" rows="4" placeholder="Type your message here..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-send">
-                            <i class="fab fa-whatsapp me-2"></i> Send to WhatsApp
+                        <button class="btn-donate-big" onclick="alert('Scan the QR code in Accommodation page to Donate!')">
+                            <i class="fas fa-heart me-2"></i> Donate for Annadanam
                         </button>
-                    </form>
-
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 
-<footer class="footer-section">
+    <div class="container future-goals mb-5">
+        <h5><i class="fas fa-seedling me-2 text-success"></i> Our Future Vision</h5>
+        <p class="small mb-0">With the blessings of Lord Narasimha, we plan to start <strong>Go Seva</strong> (Cow Protection) and <strong>Vidya Daanam</strong> (Education Support) very soon.</p>
+    </div>
+
+    <div class="bg-white py-5">
+        <div class="container">
+            <div class="page-header pt-0">
+                <h1 class="section-title">Photo Gallery</h1>
+                <div class="divider-icon"><i class="fas fa-camera-retro"></i></div>
+                <p class="section-subtitle">Moments of devotion and nature in Ahobilam.</p>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="temple1.jpg" alt="Temple">
+                        <div class="gallery-overlay"><span class="gallery-text">Temple View</span></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="annadanam-real.jpg" alt="Annadanam Service">
+                        <div class="gallery-overlay"><span class="gallery-text">Serving Food</span></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="trekking.jpg" alt="Nature">
+                        <div class="gallery-overlay"><span class="gallery-text">Ahobilam Hills</span></div>
+                    </div>
+                </div>
+                 <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="pooja.jpg" alt="Pooja">
+                        <div class="gallery-overlay"><span class="gallery-text">Special Pooja</span></div>
+                    </div>
+                </div>
+                 <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="room-pic.jpg" alt="Rooms">
+                        <div class="gallery-overlay"><span class="gallery-text">Accomodation</span></div>
+                    </div>
+                </div>
+                 <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="event.jpg" alt="Event">
+                        <div class="gallery-overlay"><span class="gallery-text">Trust Activities</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="footer-section">
     <div class="container">
         <div class="row g-4">
             
@@ -287,10 +328,10 @@
 
             <div class="col-lg-3 col-md-6">
                 <h4 class="footer-heading">Find Us</h4>
-                <div class="map-container" style="height: 150px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <div class="map-container">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.586616460627!2d78.6756813148408!3d15.132663989467642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5c5c0c0c0c0c1%3A0x0!2sAhobilam!5e0!3m2!1sen!2sin!4v1612345678901" 
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        width="100%" height="150" style="border:0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -426,13 +467,10 @@
     .copyright-area {
         background-color: #5a0e0e; /* Matching Header Text Color */
         padding: 20px 0;
-        margin-top: 20px; /* Changed from 50px to 20px */
+        margin-top: 50px;
         font-size: 0.9rem;
         color: #fff; /* White Text */
     }
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
